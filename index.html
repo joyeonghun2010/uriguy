@@ -126,6 +126,7 @@
             margin: 10px;
             box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
             transition: 0.3s;
+            position: relative;
         }
 
         .reco2 {
@@ -135,6 +136,7 @@
             margin: 10px;
             box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
             transition: 0.3s;
+            position: relative;
         }
 
         .reco3 {
@@ -144,6 +146,7 @@
             margin: 10px;
             box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
             transition: 0.3s;
+            position: relative;
         }
 
         .reco1:hover,
@@ -195,6 +198,13 @@
             color: #5B6EF5;
             margin-top: 5px;
         }
+
+        .heart {
+            position: absolute;
+            top: 20px;
+            right: 50px;
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -202,8 +212,8 @@
     <nav>
         <div class="top">
             <h1 class="text" id="logo">UriGuy</h1>
-            <button class="login" onclick="location.href='Uriguy/login.html'">로그인</button>
-            <button class="register" onclick="location.href='Uriguy/register.html'">회원가입</button>
+            <button class="login" onclick="location.href='login.html'">로그인</button>
+            <button class="register" onclick="location.href='register.html'">회원가입</button>
         </div>
     </nav>
     <div class="main">
@@ -231,6 +241,7 @@
                     <div class="name">
                         <h2>김찬열, 24</h2>
                         <p>📚책벌래</p>
+                        <h1 class="heart">♡</h1>
                     </div>
                 </div>
                 <h3>"답장 빠른 편"</h3>
@@ -250,6 +261,7 @@
                     <div class="name">
                         <h2>전예성, 22</h2>
                         <p>💪🏻헬창</p>
+                        <h1 class="heart">♡</h1>
                     </div>
                 </div>
                 <h3>"새벽 운동 좋아함"</h3>
@@ -269,6 +281,7 @@
                     <div class="name">
                         <h2>오건우, 20</h2>
                         <p>💯전교 1등</p>
+                        <h1 class="heart">♡</h1>
                     </div>
                 </div>
                 <h3>"문제 풀 때가 제일 행복해"</h3>
@@ -285,7 +298,20 @@
     </div>
     </div>
     <script>
-        document.getElementById
+        const hearts = document.querySelectorAll(".heart");
+        hearts.forEach(function (heart) {
+            heart.onclick = function () {
+                if (heart.textContent === "♡") {
+                    heart.textContent = "♥";
+                    heart.style.color = "red";
+                }
+                else {
+                    heart.textContent = "♡";
+                    heart.style.color = "black";
+                }
+            };
+        })
     </script>
 </body>
+
 </html>
